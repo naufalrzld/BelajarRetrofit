@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BelajarRetrofit</string>
+    <string name="login_activity_title">Login</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="title_btn_masuk">Masuk</string>
+    <string name="title_btn_register">Daftar</string>
+</resources>
