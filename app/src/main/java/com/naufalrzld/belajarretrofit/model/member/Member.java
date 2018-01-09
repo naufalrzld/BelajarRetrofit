@@ -1,4 +1,4 @@
-package com.naufalrzld.belajarretrofit.model;
+package com.naufalrzld.belajarretrofit.model.member;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by Naufal on 06/01/2018.
  */
 
-public class MemberModel {
+public class Member {
     @SerializedName("username")
     @Expose
     private String username;
@@ -34,7 +34,7 @@ public class MemberModel {
      * No args constructor for use in serialization
      *
      */
-    public MemberModel() {
+    public Member() {
     }
 
     /**
@@ -47,7 +47,7 @@ public class MemberModel {
      * @param firstName
      * @param password
      */
-    public MemberModel(String username, String firstName, String lastName, String email, String password, String createdAt, String updatedAt) {
+    public Member(String username, String firstName, String lastName, String email, String password, String createdAt, String updatedAt) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;

@@ -1,8 +1,15 @@
 <resources>
     <string name="app_name">BelajarRetrofit</string>
+    <string name="register_activity_title">Register</string>
     <string name="login_activity_title">Login</string>
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
+    <string name="hint_fName">Nama Depan</string>
+    <string name="hint_lName">Nama Belakang</string>
+    <string name="hint_email">Email</string>
     <string name="title_btn_masuk">Masuk</string>
     <string name="title_btn_register">Daftar</string>
+    <string name="tv_name">Nama</string>
+    <string name="tv_email">Email</string>
+    <string name="tv_toko">Toko</string>
 </resources>
