@@ -4,12 +4,38 @@
     <string name="login_activity_title">Login</string>
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
+    <string name="hint_curr_pass">Password Sekarang</string>
+    <string name="hint_new_pass">Password Baru</string>
     <string name="hint_fName">Nama Depan</string>
     <string name="hint_lName">Nama Belakang</string>
     <string name="hint_email">Email</string>
+    <string name="hint_new_email">Email Baru</string>
     <string name="title_btn_masuk">Masuk</string>
+    <string name="title_btn_simpan">Simpan</string>
     <string name="title_btn_register">Daftar</string>
     <string name="tv_name">Nama</string>
     <string name="tv_email">Email</string>
     <string name="tv_toko">Toko</string>
+
+    <string name="nav_profile">Profile</string>
+    <string name="nav_home">Toko</string>
+    <string name="nav_photos">Barang</string>
+    <string name="nav_notifications">Notifications</string>
+    <string name="nav_settings">Setting</string>
+    <string name="nav_about_us">Tentang</string>
+    <string name="nav_logout">Keluar</string>
+
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+
+    <string name="title_ubah_nama">Ubah Nama</string>
+    <string name="title_ubah_email">Ubah Email</string>
+    <string name="title_ubah_pass">Ubah Password</string>
+
+    <string-array name="nav_item_fragment_titles">
+        <item>Toko</item>
+        <item>Barang</item>
+        <item>Notifications</item>
+        <item>Settings</item>
+    </string-array>
 </resources>

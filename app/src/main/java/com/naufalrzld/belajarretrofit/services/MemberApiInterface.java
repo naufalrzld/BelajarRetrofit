@@ -18,4 +18,7 @@ public interface MemberApiInterface {
 
     @POST("/member/login")
     Call<MemberResponse> APILogin(@Body JSONObject param);
+
+    @POST("member/update")
+    Call<MemberResponse> APIUpdate(@Body JSONObject param);
 }
