@@ -8,4 +8,8 @@ public class RetrofitServices {
     public static MemberApiInterface sendMemberRequset() {
         return APIClient.getApiClient().create(MemberApiInterface.class);
     }
+
+    public static TokoApiInterface sendTokoRequest() {
+        return APIClient.getApiClient().create(TokoApiInterface.class);
+    }
 }
