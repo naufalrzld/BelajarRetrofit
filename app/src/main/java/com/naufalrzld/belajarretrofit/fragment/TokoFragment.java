@@ -1,6 +1,8 @@
 package com.naufalrzld.belajarretrofit.fragment;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,8 +14,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.naufalrzld.belajarretrofit.R;
-import com.naufalrzld.belajarretrofit.TokoAdapter;
+import com.naufalrzld.belajarretrofit.adapter.TokoAdapter;
 import com.naufalrzld.belajarretrofit.model.member.Member;
 import com.naufalrzld.belajarretrofit.model.toko.Toko;
 import com.naufalrzld.belajarretrofit.model.toko.TokoResponse;
@@ -59,6 +62,16 @@ public class TokoFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
         swipeRefreshLayout.setOnRefreshListener(this);
 
+        rvListToko.setHasFixedSize(true);
+        rvListToko.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        return v;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
         sharedPreferencesUtils = new SharedPreferencesUtils(getContext(), "DataMember");
         if (sharedPreferencesUtils.checkIfDataExists("profile")) {
             Member member = sharedPreferencesUtils.getObjectData("profile", Member.class);
@@ -66,13 +79,6 @@ public class TokoFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
             getToko(username);
         }
-
-        adapter = new TokoAdapter(getContext(), listToko);
-        rvListToko.setHasFixedSize(true);
-        rvListToko.setLayoutManager(new LinearLayoutManager(getContext()));
-        rvListToko.setAdapter(adapter);
-
-        return v;
     }
 
     @Override
@@ -88,10 +94,14 @@ public class TokoFragment extends Fragment implements SwipeRefreshLayout.OnRefre
             if (call != null) {
                 call.enqueue(new Callback<TokoResponse>() {
                     @Override
-                    public void onResponse(Call<TokoResponse> call, Response<TokoResponse> response) {
+                    public void onResponse(@NonNull Call<TokoResponse> call, @NonNull Response<TokoResponse> response) {
                         swipeRefreshLayout.setRefreshing(false);
                         if (response.isSuccessful()) {
-                            Log.d("response", response.body().getMessage());
+                            listToko = response.body().getData();
+
+                            adapter = new TokoAdapter(getContext(), listToko);
+                            rvListToko.setAdapter(adapter);
+                            adapter.notifyDataSetChanged();
                         }
                     }
 

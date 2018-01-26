@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BelajarRetrofit.iml" filepath="$PROJECT_DIR$/BelajarRetrofit.iml" />
+      <module fileurl="file://D:\Project\AndroidStudio\Belajar\BelajarRetrofit\BelajarRetrofit.iml" filepath="D:\Project\AndroidStudio\Belajar\BelajarRetrofit\BelajarRetrofit.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Project\AndroidStudio\Belajar\BelajarRetrofit\app\app.iml" filepath="D:\Project\AndroidStudio\Belajar\BelajarRetrofit\app\app.iml" />
     </modules>
   </component>
 </project>

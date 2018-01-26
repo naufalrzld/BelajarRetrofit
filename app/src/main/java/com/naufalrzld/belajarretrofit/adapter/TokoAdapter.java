@@ -1,4 +1,4 @@
-package com.naufalrzld.belajarretrofit;
+package com.naufalrzld.belajarretrofit.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.CardView;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.naufalrzld.belajarretrofit.R;
 import com.naufalrzld.belajarretrofit.model.toko.Toko;
 
 import java.util.List;
