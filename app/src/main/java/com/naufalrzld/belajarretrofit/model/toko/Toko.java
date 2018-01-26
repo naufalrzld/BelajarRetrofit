@@ -26,6 +26,9 @@ public class Toko {
     @SerializedName("updatedAt")
     @Expose
     private String updatedAt;
+    @SerializedName("jumlahBarang")
+    @Expose
+    private int jumlahBarang;
 
     public Integer getIdToko() {
         return idToko;
@@ -73,5 +76,13 @@ public class Toko {
 
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public int getJumlahBarang() {
+        return jumlahBarang;
+    }
+
+    public void setJumlahBarang(int jumlahBarang) {
+        this.jumlahBarang = jumlahBarang;
     }
 }

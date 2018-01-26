@@ -38,7 +38,10 @@
         <item>Notifications</item>
         <item>Settings</item>
     </string-array>
-    
+
     <string name="noDataToko">Anda Tidak Memiliki Toko</string>
     <string name="ket_barang">Barang</string>
+
+    <string name="hint_nama_toko">Nama Toko</string>
+    <string name="hint_desc_toko">Deskripsi Toko</string>
 </resources>

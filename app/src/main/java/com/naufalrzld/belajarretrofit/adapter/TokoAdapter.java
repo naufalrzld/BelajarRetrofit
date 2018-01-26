@@ -39,6 +39,7 @@ public class TokoAdapter extends RecyclerView.Adapter<TokoAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         Toko toko = listToko.get(position);
         holder.namaToko.setText(toko.getNamaToko());
+        holder.totalBarang.setText(String.valueOf(toko.getJumlahBarang()));
     }
 
     @Override

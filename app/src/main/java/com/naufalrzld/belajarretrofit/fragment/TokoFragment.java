@@ -1,8 +1,10 @@
 package com.naufalrzld.belajarretrofit.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,6 +18,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.naufalrzld.belajarretrofit.R;
+import com.naufalrzld.belajarretrofit.activity.AddTokoActivity;
 import com.naufalrzld.belajarretrofit.adapter.TokoAdapter;
 import com.naufalrzld.belajarretrofit.model.member.Member;
 import com.naufalrzld.belajarretrofit.model.toko.Toko;
@@ -41,6 +44,8 @@ public class TokoFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     RecyclerView rvListToko;
     @BindView(R.id.tvNoData)
     TextView tvNoData;
+    @BindView(R.id.fabTambahToko)
+    FloatingActionButton fabAddToko;
 
     private List<Toko> listToko = new ArrayList<>();
     private TokoAdapter adapter;
@@ -64,6 +69,13 @@ public class TokoFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
         rvListToko.setHasFixedSize(true);
         rvListToko.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        fabAddToko.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), AddTokoActivity.class));
+            }
+        });
 
         return v;
     }
