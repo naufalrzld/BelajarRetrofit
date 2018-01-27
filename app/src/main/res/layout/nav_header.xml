@@ -27,7 +27,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tv_name"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/colorWhite"
             android:paddingTop="5dp"/>
 
         <TextView
@@ -35,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tv_email"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textColor="@color/colorBlack"
             android:paddingTop="5dp"/>
 

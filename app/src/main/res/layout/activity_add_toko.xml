@@ -40,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_desc_toko"
                 android:gravity="top"
+                android:inputType="textMultiLine|textCapSentences"
                 android:lines="8" />
 
         </android.support.design.widget.TextInputLayout>

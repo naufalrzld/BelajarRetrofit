@@ -36,8 +36,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class TokoFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
-    @BindView(R.id.lytListToko)
-    LinearLayout lytListToko;
     @BindView(R.id.swipeRefresh)
     SwipeRefreshLayout swipeRefreshLayout;
     @BindView(R.id.rvListToko)
@@ -88,13 +86,17 @@ public class TokoFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         if (sharedPreferencesUtils.checkIfDataExists("profile")) {
             Member member = sharedPreferencesUtils.getObjectData("profile", Member.class);
             username = member.getUsername();
-
-            getToko(username);
         }
     }
 
     @Override
     public void onRefresh() {
+        getToko(username);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         getToko(username);
     }
 
@@ -113,6 +115,14 @@ public class TokoFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
                             adapter = new TokoAdapter(getContext(), listToko);
                             rvListToko.setAdapter(adapter);
+
+                            if (listToko.isEmpty()) {
+                                tvNoData.setVisibility(View.VISIBLE);
+                                rvListToko.setVisibility(View.GONE);
+                            } else {
+                                tvNoData.setVisibility(View.GONE);
+                                rvListToko.setVisibility(View.VISIBLE);
+                            }
                             adapter.notifyDataSetChanged();
                         }
                     }
@@ -120,7 +130,7 @@ public class TokoFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                     @Override
                     public void onFailure(Call<TokoResponse> call, Throwable t) {
                         swipeRefreshLayout.setRefreshing(false);
-                        Log.d("error", t.getMessage());
+                        Log.e("error", t.getMessage());
                     }
                 });
             }

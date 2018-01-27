@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
         btnMasuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (isValidInput()) {
+                if (isInputValid()) {
                     String username = etUsername.getText().toString();
                     String password = etPassword.getText().toString();
                     try {
@@ -97,7 +97,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private boolean isValidInput() {
+    private boolean isInputValid() {
         ilUsername.setErrorEnabled(false);
         ilPassword.setErrorEnabled(false);
 
