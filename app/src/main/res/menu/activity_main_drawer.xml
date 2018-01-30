@@ -6,10 +6,6 @@
             android:id="@+id/nav_store"
             android:icon="@drawable/ic_store_black_24dp"
             android:title="@string/nav_home" />
-        <item
-            android:id="@+id/nav_photos"
-            android:icon="@drawable/ic_list_black_24dp"
-            android:title="@string/nav_photos" />
 
         <item
             android:id="@+id/nav_notifications"

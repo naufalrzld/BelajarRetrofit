@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
     public static int navItemIndex = 0;
 
     private static final String TAG_TOKO = "toko";
-    private static final String TAG_BARANG = "barang";
     private static final String TAG_NOTIFICATIONS = "notifications";
     private static final String TAG_SETTINGS = "settings";
     public static String CURRENT_TAG = TAG_TOKO;
@@ -165,16 +164,12 @@ public class MainActivity extends AppCompatActivity {
                         navItemIndex = 0;
                         CURRENT_TAG = TAG_TOKO;
                         break;
-                    case R.id.nav_photos:
-                        navItemIndex = 1;
-                        CURRENT_TAG = TAG_BARANG;
-                        break;
                     case R.id.nav_notifications:
-                        navItemIndex = 2;
+                        navItemIndex = 1;
                         CURRENT_TAG = TAG_NOTIFICATIONS;
                         break;
                     case R.id.nav_settings:
-                        navItemIndex = 3;
+                        navItemIndex = 2;
                         CURRENT_TAG = TAG_SETTINGS;
                         break;
                     case R.id.nav_profile:

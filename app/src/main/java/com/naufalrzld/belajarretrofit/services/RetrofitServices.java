@@ -12,4 +12,8 @@ public class RetrofitServices {
     public static TokoApiInterface sendTokoRequest() {
         return APIClient.getApiClient().create(TokoApiInterface.class);
     }
+
+    public static BarangApiInterface sendBarangRequest() {
+        return APIClient.getApiClient().create(BarangApiInterface.class);
+    }
 }
