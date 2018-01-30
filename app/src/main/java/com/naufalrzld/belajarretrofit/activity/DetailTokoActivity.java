@@ -74,6 +74,7 @@ public class DetailTokoActivity extends AppCompatActivity {
 
         rvListToko.setHasFixedSize(true);
         rvListToko.setLayoutManager(new LinearLayoutManager(this));
+        rvListToko.setNestedScrollingEnabled(false);
 
         btnHapusToko.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +84,6 @@ public class DetailTokoActivity extends AppCompatActivity {
         });
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
             public void onRefresh() {
                 getAllBarang(String.valueOf(toko.getIdToko()));
             }
