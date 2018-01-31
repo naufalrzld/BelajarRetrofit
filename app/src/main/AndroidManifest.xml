@@ -22,7 +22,8 @@
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.ProfileActivity" />
         <activity android:name=".activity.AddTokoActivity" />
-        <activity android:name=".activity.DetailTokoActivity"/>
+        <activity android:name=".activity.DetailTokoActivity" />
+        <activity android:name=".activity.AddBarangActivity"></activity>
     </application>
 
 </manifest>

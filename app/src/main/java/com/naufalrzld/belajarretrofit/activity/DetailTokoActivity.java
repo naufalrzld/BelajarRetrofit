@@ -53,6 +53,8 @@ public class DetailTokoActivity extends AppCompatActivity {
     private List<Barang> listBarang;
     private BarangAdapter adapter;
 
+    private String idToko;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +67,8 @@ public class DetailTokoActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
 
         Intent i = getIntent();
-        final Toko toko = new Gson().fromJson(i.getStringExtra("data"), Toko.class);
+        Toko toko = new Gson().fromJson(i.getStringExtra("data"), Toko.class);
+        idToko = String.valueOf(toko.getIdToko());
 
         tvNamaToko.setText(toko.getNamaToko());
         tvDescToko.setText(toko.getDescToko());
@@ -85,18 +88,24 @@ public class DetailTokoActivity extends AppCompatActivity {
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             public void onRefresh() {
-                getAllBarang(String.valueOf(toko.getIdToko()));
+                getAllBarang(idToko);
             }
         });
 
         fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Add Clicked", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(DetailTokoActivity.this, AddBarangActivity.class);
+                i.putExtra("idToko", idToko);
+                startActivity(i);
             }
         });
+    }
 
-        getAllBarang(String.valueOf(toko.getIdToko()));
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getAllBarang(idToko);
     }
 
     private void getAllBarang(String idToko) {

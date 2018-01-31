@@ -45,8 +45,12 @@
     <string name="hint_nama_toko">Nama Toko</string>
     <string name="hint_desc_toko">Deskripsi Toko</string>
     <string name="title_btn_hapus_toko">Hapus Toko</string>
+    <string name="hint_nama_barang">Nama Barang</string>
+    <string name="hint_stok">Stok</string>
+    <string name="hint_harga">Harga</string>
 
     <string name="activity_profile">Profile</string>
     <string name="activity_addToko">Tambah Toko</string>
+    <string name="activity_addBarang">Tambah Barang</string>
     <string name="activity_detailToko">Detail Toko</string>
 </resources>

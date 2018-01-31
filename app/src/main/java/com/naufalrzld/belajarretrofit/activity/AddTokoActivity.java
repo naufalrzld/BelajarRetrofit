@@ -137,7 +137,6 @@ public class AddTokoActivity extends AppCompatActivity {
                     if (response.isSuccessful()) {
                         try {
                             JSONObject result = new JSONObject(response.body());
-                            Log.d("response", result.toString());
                             Toast.makeText(getApplicationContext(), result.getString("message"), Toast.LENGTH_SHORT).show();
 
                             refreshLayout();
