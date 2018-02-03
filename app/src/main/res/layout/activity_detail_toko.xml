@@ -36,62 +36,140 @@
                         android:layout_margin="15dp"
                         app:cardCornerRadius="10dp">
 
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:gravity="center"
-                            android:padding="15dp">
+                            android:layout_height="wrap_content">
 
                             <ImageView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                android:src="@drawable/store"/>
-
-                            <TextView
-                                android:id="@+id/tvNamaToko"
+                                android:id="@+id/btnEdit"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                tools:text="Test"
-                                android:textSize="16sp"
-                                android:textColor="@color/colorBlack"
-                                android:textStyle="bold"
-                                android:layout_marginTop="5dp"/>
+                                android:layout_alignParentEnd="true"
+                                android:layout_margin="15dp"
+                                android:src="@drawable/ic_edit"/>
 
-                            <TextView
-                                android:id="@+id/tvDescToko"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                tools:text="Test"
-                                android:textSize="14sp"
-                                android:layout_marginTop="5dp"/>
-
-                            <android.support.v7.widget.CardView
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                app:cardBackgroundColor="@color/colorRed"
-                                app:cardCornerRadius="20dp"
-                                android:layout_marginTop="5dp">
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:padding="15dp">
+
+                                <ImageView
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:src="@drawable/store"/>
 
                                 <LinearLayout
+                                    android:id="@+id/lytNoneEdit"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center">
+                                    android:orientation="vertical"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center">
 
-                                    <Button
-                                        android:id="@+id/btnHapusToko"
+                                    <TextView
+                                        android:id="@+id/tvNamaToko"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        tools:text="Test"
+                                        android:textSize="16sp"
+                                        android:textColor="@color/colorBlack"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tvDescToko"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        tools:text="Test"
+                                        android:textSize="14sp"
+                                        android:layout_marginTop="5dp"/>
+
+                                    <android.support.v7.widget.CardView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:background="@null"
-                                        android:text="@string/title_btn_hapus_toko"
-                                        android:textColor="@color/colorWhite"
-                                        android:textAllCaps="true"/>
+                                        app:cardBackgroundColor="@color/colorRed"
+                                        app:cardCornerRadius="20dp"
+                                        android:layout_marginTop="5dp">
+
+                                        <Button
+                                            android:id="@+id/btnHapusToko"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@null"
+                                            android:text="@string/title_btn_hapus_toko"
+                                            android:textColor="@color/colorWhite"
+                                            android:textAllCaps="true"/>
+
+                                    </android.support.v7.widget.CardView>
+
 
                                 </LinearLayout>
 
-                            </android.support.v7.widget.CardView>
+                                <LinearLayout
+                                    android:id="@+id/lytEdit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginTop="5dp"
+                                    android:visibility="gone">
 
-                        </LinearLayout>
+                                    <android.support.design.widget.TextInputLayout
+                                        android:id="@+id/ilNamaToko"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <android.support.design.widget.TextInputEditText
+                                            android:id="@+id/etNamaToko"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:hint="@string/hint_nama_toko"
+                                            android:inputType="textCapWords"
+                                            android:gravity="center"
+                                            android:textColor="@color/colorBlack"/>
+
+                                    </android.support.design.widget.TextInputLayout>
+
+                                    <android.support.design.widget.TextInputLayout
+                                        android:id="@+id/ilDescToko"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <android.support.design.widget.TextInputEditText
+                                            android:id="@+id/etDescToko"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:hint="@string/hint_desc_toko"
+                                            android:inputType="textMultiLine|textCapSentences"
+                                            android:gravity="top"
+                                            android:lines="4"
+                                            android:textColor="@color/colorBlack"/>
+
+                                    </android.support.design.widget.TextInputLayout>
+
+                                    <android.support.v7.widget.CardView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        app:cardBackgroundColor="@color/colorPrimary"
+                                        app:cardCornerRadius="20dp"
+                                        android:layout_marginTop="5dp">
+
+                                        <Button
+                                            android:id="@+id/btnSimpan"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@null"
+                                            android:text="@string/title_btn_simpan"
+                                            android:textColor="@color/colorWhite"
+                                            android:textAllCaps="true"/>
+
+                                    </android.support.v7.widget.CardView>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
 
                     </android.support.v7.widget.CardView>
 

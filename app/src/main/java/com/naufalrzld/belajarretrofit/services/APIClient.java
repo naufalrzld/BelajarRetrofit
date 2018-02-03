@@ -14,7 +14,6 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
  */
 
 public class APIClient {
-    //public static final String BASE_URL = "https://belajarapinodejs.herokuapp.com";
     private static final String BASE_URL = "http://192.168.0.22:5000";
     private static Retrofit retrofit = null;
 

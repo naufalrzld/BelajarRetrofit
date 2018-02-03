@@ -20,4 +20,7 @@ public interface TokoApiInterface {
 
     @POST("/toko/addToko")
     Call<String> APIAddToko(@Body JSONObject params);
+
+    @POST("/toko/update")
+    Call<String> APIEditToko(@Body JSONObject params);
 }
